@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  nginx:
+    build: ./docker/nginx
+    ports: ["${NGINX_HOST_PORT:?}:${NGINX_CONTAINER_PORT:?}"]
+    environment:
+      - NGINX_PORT=${NGINX_CONTAINER_PORT:?}
+      - NGINX_HOST=${NGINX_HOST:?}
+      - NGINX_ROOT=${APP_PATH:?}/web
+    volumes:
+      - ./src:${APP_PATH:?}
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/command.sh:/etc/nginx/command.sh
+    command: /bin/bash -c /etc/nginx/command.sh

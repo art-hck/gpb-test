@@ -1,0 +1,11 @@
+server {
+    root ${NGINX_ROOT};
+    listen ${NGINX_PORT};
+    server_name ${NGINX_HOST};
+        
+    # Frontend (Angular2)
+    location / {
+        expires max;
+        try_files $uri /dist/index.html =404;
+    }
+}
