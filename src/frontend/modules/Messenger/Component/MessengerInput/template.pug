@@ -1,0 +1,8 @@
+doctype html
+div(
+    #textarea,
+    contenteditable="true",
+    [style.max-height.px]="150",
+    (input)="onInput()",
+    (keyup)="onInput()"
+)

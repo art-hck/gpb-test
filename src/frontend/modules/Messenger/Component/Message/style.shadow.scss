@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  background: #fff;
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 10px 10px 10px 0;
+  margin: 10px;
+  word-break: break-all;
+  max-width: 500px;
+  position: relative;
+  flex-wrap: wrap;
+  box-shadow:0 1px 1px #ccc;
+  flex-shrink: 0;
+  
+  &.isOwner {
+    align-self: flex-end;
+    background: #f2f6fa;
+    border-radius: 10px 10px 0;
+  }
+
+  .text {
+    line-height: 18px;
+  }
+
+  .time {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 0.8em;
+    padding-left: 8px;
+    color: #999;
+    align-self: flex-end;
+  }
+}

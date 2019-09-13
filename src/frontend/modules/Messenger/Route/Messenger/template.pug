@@ -1,0 +1,17 @@
+doctype html
+.header
+    i.material-icons eco
+    span Messenger
+.messages(#messages, (scroll)="onScroll($event.target)", (touchmove)="onScroll($event.target)")
+    .flex-space
+    message(*ngFor="let message of service.get() | async", [message]="message")
+    message-typing(*ngIf="service.onInterlocutorTyping | async")
+
+button.scrollBot(*ngIf="!isScrolledBottom", (click)="scrollToBottom();")
+    i.material-icons keyboard_arrow_down
+    .cnt(*ngIf="unreaded > 0") {{ unreaded }}
+    
+form([formGroup]="messageForm", (ngSubmit)="send()", (keydown.enter)="$event.preventDefault(); send()")
+    messenger-input(formControlName="text")
+    button.send(*ngIf="!messageForm.invalid")
+        i.material-icons send

@@ -1,0 +1,88 @@
+:host {
+  max-width: 700px;
+  min-width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
+  height: -webkit-fill-available;
+  position: relative;
+  background: url("../../../../assets/images/bg.png");
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.06), 0 2px 5px 0 rgba(0,0,0,.2);
+  
+}
+
+.header {
+  background: #eee;
+  padding: 10px 16px;
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  
+  i {
+    margin-right: 10px;
+  }
+}
+
+.messages {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+button.scrollBot {
+  position: absolute;
+  right: 25px;
+  bottom: 53px;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  box-shadow:0 1px 1px #ccc;
+  border-radius: 50%;
+  color: #999;
+  cursor: pointer;
+  overflow: visible;
+
+  i {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .cnt {
+    position: absolute;
+    background: #5b6abf;
+    color: #fff;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: -9px;
+    left: calc(50% - 9px);
+  }
+}
+
+form {
+  position: relative;
+}
+
+button.send {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #544eed;
+  animation: fadeIn 200ms;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

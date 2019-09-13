@@ -1,0 +1,77 @@
+@import '~reset-css/reset.css';
+@import "global";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html, body {
+  font-family: $font_family;
+  font-size: $font_size;
+  -webkit-font-smoothing: antialiased;
+  background: #dfdfdf;
+  padding: 10px 0;
+}
+@media (max-width: 700px) {
+   html, body {
+     padding: 0;
+   }
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 150px;
+  background: #5b6abf;
+}
+
+a { cursor: pointer; text-decoration: none;}
+b { font-weight: bold; }
+i { font-style: italic; }
+
+button, input, textarea {
+  font-size: $font_size;
+  font-family: $font_family;
+  background: none;
+  border: none;
+  outline: none;
+  display: block;
+  
+  &:-webkit-autofill {
+    animation: autofill both;
+  }
+}
+
+textarea {
+  font-family: $font_family;
+}
+
+h1 { font-size: $h1_size; }
+h2 { font-size: $h2_size; }
+h3 { font-size: $h3_size; }
+h4 { font-size: $h4_size; }
+small { font-size: $small_size; }
+
+// Flex separator
+.flex-space {
+  flex-grow: 1;
+}
+
+.debug {
+  font: 12px "Courier New";
+  white-space: pre-wrap;
+  padding: 5px;
+  border: 1px #ccc solid;
+  background: #eee;
+  border-radius: 3px;
+}
+
+button, a, div {
+  outline: none!important;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
